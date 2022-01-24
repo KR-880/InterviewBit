@@ -1,0 +1,16 @@
+int Solution::majorityElement(const vector<int> &A) {
+    int arr=A[0] , max_count=1;
+    for(int i=1;i<A.size();i++){
+        if(A[i]==arr){
+            max_count++;
+            }  
+        else if(max_count==0){
+                arr=A[i];
+                max_count=1;
+            }
+        else{
+            max_count--;
+        }
+    }
+    return arr;
+}
